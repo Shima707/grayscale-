@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Grayscaling</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  </head>
+  <body>
+    <h1>Image Grayscaling</h1>
+
+    <!-- Image Upload Form -->
+    <form id="upload-form" enctype="multipart/form-data">
+      <input type="file" id="image-input" accept="image/*" required />
+      <button type="submit">Upload & Grayscale</button>
+    </form>
+
+    <!-- Display Grayscaled Image -->
+    <div id="result">
+      <h2>Grayscaled Image</h2>
+      <img id="grayscaled-image" src="" alt="Grayscaled Image" />
+    </div>
+
+    <script src="script.js"></script>
+    <py-script>
+      # Load an image image = cv2.imread("input_image.jpg") # Convert the image
+      to grayscale gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) # Save
+      the grayscale image cv2.imwrite("output_gray_image.jpg", gray_image) #
+      Display the grayscale image cv2.imshow("Grayscale Image", gray_image)
+      cv2.waitKey(0) cv2.destroyAllWindows()
+    </py-script>
+  </body>
+</html>
